@@ -42,18 +42,22 @@ const getSimilarProductsOnGC = async (file, productSet) => {
     }
   }).filter(p => p)
 
-  const newData = await Promise.all(products?.map(async product => {
-    const productName = String(product?.product?.name)?.split('/')
-    const productId = productName[productName?.length - 1]
+  let newData = []
 
-    const image = String(product?.image)?.split('/')
-    const imageId = image[image?.length - 1]
-
-    return {
-      ...product,
-      image: await getReferenceImage(productId, imageId)
-    }
-  }))
+  if (products?.length) {
+    newData = await Promise.all(products?.map(async product => {
+      const productName = String(product?.product?.name)?.split('/')
+      const productId = productName[productName?.length - 1]
+  
+      const image = String(product?.image)?.split('/')
+      const imageId = image[image?.length - 1]
+  
+      return {
+        ...product,
+        image: await getReferenceImage(productId, imageId)
+      }
+    }))
+  }
 
   return newData || []
 }
