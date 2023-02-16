@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "set GOOGLE_APPLICATION_CREDENTIALS=./src/config/GCP/ocrtest-377712-efbacfd80a01.json && node ./src/index.js",
     "dev": "nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
