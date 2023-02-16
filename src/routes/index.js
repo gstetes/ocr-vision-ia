@@ -46,4 +46,6 @@ routes.post('/getProducts', upload.single('file'), async (req, res) => {
   return res.status(200).json(products)
 })
 
+routes.get('/', (req, res) => res.sendStatus(200))
+
 module.exports = routes;
