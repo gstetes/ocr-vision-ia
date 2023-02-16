@@ -5,11 +5,11 @@ const { GOOGLE_PROJECT_ID, GOOGLE_LOCATION } = process.env;
 
 const productSearchClient = new vision.ProductSearchClient({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
 });
 const imageAnnotatorClient = new vision.ImageAnnotatorClient({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
 });
 
 const getSimilarProductsOnGC = async (file, productSet) => {

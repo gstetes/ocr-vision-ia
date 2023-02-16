@@ -6,11 +6,11 @@ const { GOOGLE_LOCATION, GOOGLE_PROJECT_ID } = process.env;
 
 const client = new vision.ProductSearchClient({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
 });
 const storage = new Storage({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
 });
 
 
