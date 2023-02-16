@@ -2,10 +2,17 @@ const vision = require('@google-cloud/vision')
 const { Storage } = require('@google-cloud/storage')
 const { createReferenceImage } = require('./referenceImages')
 
-const client = new vision.ProductSearchClient();
-const storage = new Storage();
-
 const { GOOGLE_LOCATION, GOOGLE_PROJECT_ID } = process.env;
+
+const client = new vision.ProductSearchClient({
+  projectId: GOOGLE_PROJECT_ID,
+  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+});
+const storage = new Storage({
+  projectId: GOOGLE_PROJECT_ID,
+  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+});
+
 
 const createProduct = async (productId, productName, productSetId, files) => {
   const locationPath = client.locationPath(GOOGLE_PROJECT_ID, GOOGLE_LOCATION);

@@ -1,12 +1,16 @@
 const { getReferenceImage } = require('./referenceImages')
 const vision = require('@google-cloud/vision');
 
-const credentials = require('../../config/GCP/ocrtest-377712-efbacfd80a01.json')
-
-const productSearchClient = new vision.ProductSearchClient();
-const imageAnnotatorClient = new vision.ImageAnnotatorClient();
-
 const { GOOGLE_PROJECT_ID, GOOGLE_LOCATION } = process.env;
+
+const productSearchClient = new vision.ProductSearchClient({
+  projectId: GOOGLE_PROJECT_ID,
+  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+});
+const imageAnnotatorClient = new vision.ImageAnnotatorClient({
+  projectId: GOOGLE_PROJECT_ID,
+  keyFilename: '../../config/GCP/ocrtest-377712-efbacfd80a01.json'
+});
 
 const getSimilarProductsOnGC = async (file, productSet) => {
   const productSetPath = productSearchClient.productSetPath(GOOGLE_PROJECT_ID, GOOGLE_LOCATION, productSet)
