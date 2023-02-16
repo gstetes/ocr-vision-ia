@@ -2,7 +2,9 @@ const vision = require('@google-cloud/vision')
 const { Storage } = require('@google-cloud/storage')
 const { createReferenceImage } = require('./referenceImages')
 
-const client = new vision.ProductSearchClient();
+const client = new vision.ProductSearchClient({
+  keyFilename: '../../config/GCP/ocrtest-377712-ab1969f71f37.json'
+});
 const storage = new Storage();
 
 const { GOOGLE_LOCATION, GOOGLE_PROJECT_ID } = process.env;

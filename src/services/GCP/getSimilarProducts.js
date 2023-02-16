@@ -1,8 +1,12 @@
 const { getReferenceImage } = require('./referenceImages')
 const vision = require('@google-cloud/vision');
 
-const productSearchClient = new vision.ProductSearchClient();
-const imageAnnotatorClient = new vision.ImageAnnotatorClient();
+const productSearchClient = new vision.ProductSearchClient({
+  keyFilename: '../../config/GCP/ocrtest-377712-ab1969f71f37.json'
+});
+const imageAnnotatorClient = new vision.ImageAnnotatorClient({
+  keyFilename: '../../config/GCP/ocrtest-377712-ab1969f71f37.json'
+});
 
 const { GOOGLE_PROJECT_ID, GOOGLE_LOCATION } = process.env;
 
