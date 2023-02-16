@@ -18,6 +18,8 @@ const imageAnnotatorClient = new vision.ImageAnnotatorClient({
   ]
 });
 
+console.log(productSearchClient.auth)
+
 const { GOOGLE_PROJECT_ID, GOOGLE_LOCATION } = process.env;
 
 const getSimilarProductsOnGC = async (file, productSet) => {
