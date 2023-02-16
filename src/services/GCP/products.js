@@ -1,3 +1,4 @@
+const path = require('path')
 const vision = require('@google-cloud/vision')
 const { Storage } = require('@google-cloud/storage')
 const { createReferenceImage } = require('./referenceImages')
@@ -6,11 +7,11 @@ const { GOOGLE_LOCATION, GOOGLE_PROJECT_ID } = process.env;
 
 const client = new vision.ProductSearchClient({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: path.join(__dirname, '../', '../', 'config', 'GCP', 'ocrtest-377712-efbacfd80a01.json')
 });
 const storage = new Storage({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: path.join(__dirname, '../', '../', 'config', 'GCP', 'ocrtest-377712-efbacfd80a01.json')
 });
 
 

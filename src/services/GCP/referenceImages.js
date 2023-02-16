@@ -1,3 +1,4 @@
+const path = require('path')
 const vision = require('@google-cloud/vision');
 const moment = require('moment/moment');
 
@@ -5,7 +6,7 @@ const { GOOGLE_PROJECT_ID, GOOGLE_LOCATION } = process.env
 
 const client = new vision.ProductSearchClient({
   projectId: GOOGLE_PROJECT_ID,
-  keyFilename: '/src/config/GCP/ocrtest-377712-efbacfd80a01.json'
+  keyFilename: path.join(__dirname, '../', '../', 'config', 'GCP', 'ocrtest-377712-efbacfd80a01.json')
 })
 
 const createReferenceImage = async (productId, productImage) => {
