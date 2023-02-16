@@ -1,1 +1,0 @@
-set GOOGLE_APPLICATION_CREDENTIALS="src\config\GCP\ocrtest-377712-ab1969f71f37.json"
