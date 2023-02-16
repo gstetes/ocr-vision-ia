@@ -3,6 +3,8 @@ const vision = require('@google-cloud/vision');
 
 const credentials = require('../../config/GCP/ocrtest-377712-ab1969f71f37.json')
 
+console.log(credentials)
+
 const productSearchClient = new vision.ProductSearchClient({
   credentials
 });
