@@ -3,22 +3,8 @@ const vision = require('@google-cloud/vision');
 
 const credentials = require('../../config/GCP/ocrtest-377712-efbacfd80a01.json')
 
-const productSearchClient = new vision.ProductSearchClient({
-  credentials,
-  scopes: [
-    'https://www.googleapis.com/auth/cloud-platform',
-    'https://www.googleapis.com/auth/cloud-vision'
-  ]
-});
-const imageAnnotatorClient = new vision.ImageAnnotatorClient({
-  credentials,
-  scopes: [
-    'https://www.googleapis.com/auth/cloud-platform',
-    'https://www.googleapis.com/auth/cloud-vision'
-  ]
-});
-
-console.log(productSearchClient.auth)
+const productSearchClient = new vision.ProductSearchClient();
+const imageAnnotatorClient = new vision.ImageAnnotatorClient();
 
 const { GOOGLE_PROJECT_ID, GOOGLE_LOCATION } = process.env;
 
