@@ -2,8 +2,10 @@ const vision = require('@google-cloud/vision')
 const { Storage } = require('@google-cloud/storage')
 const { createReferenceImage } = require('./referenceImages')
 
+const credentials = require('../../config/GCP/ocrtest-377712-ab1969f71f37.json')
+
 const client = new vision.ProductSearchClient({
-  keyFilename: '../../config/GCP/ocrtest-377712-ab1969f71f37.json'
+  credentials
 });
 const storage = new Storage();
 
