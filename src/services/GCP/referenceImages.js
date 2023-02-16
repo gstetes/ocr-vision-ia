@@ -45,7 +45,7 @@ const getReferenceImage = async (productId, referenceImageId) => {
     name: formattedName
   });
   const uri = response?.[0]?.uri?.split('//')
-  return `https://storage.cloud.google.com/${uri[1]}`
+  return `https://storage.googleapis.com/${uri[1]}`
 }
 
 module.exports = {
